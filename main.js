@@ -21,8 +21,16 @@ function toggleDarkMode() {
 }
 
 function updateToggleButton(isDarkMode) {
-    const toggleBtn = document.getElementById('dark-mode-toggle');
-    toggleBtn.textContent = isDarkMode ? '라이트 모드' : '다크 모드';
+    const themeIcon = document.getElementById('theme-icon');
+    const themeText = document.getElementById('theme-text');
+    
+    if (isDarkMode) {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = '라이트 모드';
+    } else {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = '다크 모드';
+    }
 }
 
 // 초기 설정 로드

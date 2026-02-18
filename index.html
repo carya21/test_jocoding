@@ -7,10 +7,12 @@
     <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-    <button id="dark-mode-toggle" onclick="toggleDarkMode()">다크 모드</button>
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()">
+        <span id="theme-icon">🌙</span> <span id="theme-text">다크 모드</span>
+    </button>
     <h1>로또 번호 추첨기</h1>
     <div id="numbers-container"></div>
     <button onclick="generateNumbers()">번호 추첨</button>
     <script defer type="text/javascript" src="/main.js"></script>
 </body>
-</html>ㅈ
+</html>
