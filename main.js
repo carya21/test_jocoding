@@ -13,3 +13,23 @@ function generateNumbers() {
         numbersContainer.appendChild(numberDiv);
     }
 }
+
+function toggleDarkMode() {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+    updateToggleButton(isDarkMode);
+}
+
+function updateToggleButton(isDarkMode) {
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    toggleBtn.textContent = isDarkMode ? '라이트 모드' : '다크 모드';
+}
+
+// 초기 설정 로드
+window.onload = () => {
+    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (savedDarkMode) {
+        document.body.classList.add('dark-mode');
+    }
+    updateToggleButton(savedDarkMode);
+};

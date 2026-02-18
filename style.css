@@ -1,3 +1,23 @@
+:root {
+    --bg-gradient: linear-gradient(to right, #ff7e5f, #feb47b);
+    --text-color: white;
+    --number-bg: white;
+    --number-text: #333;
+    --button-bg: #fff;
+    --button-text: #ff7e5f;
+    --button-border: #ff7e5f;
+}
+
+body.dark-mode {
+    --bg-gradient: linear-gradient(to right, #2c3e50, #000000);
+    --text-color: #eee;
+    --number-bg: #444;
+    --number-text: #eee;
+    --button-bg: #333;
+    --button-text: #eee;
+    --button-border: #eee;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -6,11 +26,12 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: var(--bg-gradient);
+    transition: background 0.3s ease;
 }
 
 h1 {
-    color: white;
+    color: var(--text-color);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -24,34 +45,47 @@ h1 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: white;
+    background-color: var(--number-bg);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 28px;
     font-weight: bold;
-    color: #333;
+    color: var(--number-text);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    transition: transform 0.2s, background-color 0.3s, color 0.3s;
 }
 
 .number:hover {
     transform: scale(1.1);
 }
 
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
 button {
-    background-color: #fff;
-    color: #ff7e5f;
-    border: 2px solid #ff7e5f;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: 2px solid var(--button-border);
     border-radius: 25px;
     padding: 15px 30px;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #ff7e5f;
-    color: #fff;
+    background-color: var(--button-text);
+    color: var(--button-bg);
+}
+
+#dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
 }
